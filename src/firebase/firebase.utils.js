@@ -41,18 +41,14 @@ export const createUserProfileDocumnet = async (userAuth, additionalData) => {
   return userRef
 }
 
+// sign in with Google
 
-const provider = new firebase.auth.GoogleAuthProvider()
+// const provider = new firebase.auth.GoogleAuthProvider()
 // provider.setCustomParameters({ prompt: 'select_account' })
-
-export const signInWithGoogle = firebase.auth().signInWithPopup(provider).then(function (result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  // var token = result.credential.accessToken;
-  // The signed-in user info.
- console.log(' result.user',  result.user)
-  // ...
-}).catch(function (error) {
-  console.log(`Error on sign in with google ${error.message}`)
-});
+// export const signInWithGoogle = firebase.auth().signInWithPopup(provider).then(function (result) {
+//  console.log(' result.user',  result.user)
+// }).catch(function (error) {
+//   console.log(`Error on sign in with google ${error.message}`)
+// });
 
 export default firebase
