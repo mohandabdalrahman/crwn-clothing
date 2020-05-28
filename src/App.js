@@ -9,7 +9,8 @@ import { auth, createUserProfileDocumnet } from './firebase/firebase.utils'
 import { connect } from 'react-redux'
 import setCurrentUser from './redux/user/user-action'
 import { selectCurrentUser } from './redux/user/user-selector'
-import {createStructuredSelector} from 'reselect'
+import { createStructuredSelector } from 'reselect'
+import CollectionPage  from './pages/collection/collection'
 import './App.css';
 
 class App extends Component {
@@ -46,7 +47,8 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path='/' exact component={HomePage} />
-          <Route path='/shop' exact component={ShopPage} />
+          <Route exact path='/shop'  component={ShopPage} />
+          <Route exact path='/shop/:collectionId' component={CollectionPage} />
           <Route path='/checkout' exact component={Checkout} />
           <Route exact path='/sign' render={() => this.props.currentUser ? (<Redirect to="/" />) : (<SignInAndSignUpPage />)} />
         </Switch>
